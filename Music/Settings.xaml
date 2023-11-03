@@ -1,0 +1,15 @@
+﻿<Window x:Class="Music.Settings"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Settings" Width="800" Height="600">
+    <Grid>
+        <!-- Различные параметры настройки, такие как горячие клавиши, вид интерфейса и другие параметры -->
+        <TextBlock Text="Настройки" />
+        <CheckBox Content="Темный режим" Margin="0,28,293,466" Checked="CheckBox_Checked"  Unchecked="CheckBox_Unchecked" RenderTransformOrigin="0.651,0.761" HorizontalAlignment="Right" Width="485" />
+
+
+        <!-- Кнопка сохранения настроек -->
+        <Button Content="Сохранить настройки" Margin="125,280,443,239" />
+        <Button Content="Вернуться" Margin="449,278,119,239" Click="BackToMainButton_Click" />
+    </Grid>
+</Window>

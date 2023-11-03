@@ -13,5 +13,17 @@ namespace Music
     /// </summary>
     public partial class App : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+
+            ResourceDictionary darkTheme = new ResourceDictionary { Source = new Uri("Resourses/DarkTheme.xaml", UriKind.Relative) };
+            ResourceDictionary lightTheme = new ResourceDictionary { Source = new Uri("Resourses/LightTheme.xaml", UriKind.Relative) };
+
+            Application.Current.Resources.MergedDictionaries.Add(darkTheme);
+            Application.Current.Resources.MergedDictionaries.Add(lightTheme);
+
+     
+        }
     }
 }
