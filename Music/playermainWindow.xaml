@@ -1,0 +1,31 @@
+﻿<Window x:Class="Music.playermainWindow"
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Music Player" Width="800" Height="600">
+    <Grid>
+        <!-- Основное содержимое вашего плеера здесь -->
+        <!-- Элемент выбора трека в центре окна -->
+        <ComboBox Name="TrackComboBox" Width="200" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <!-- Здесь вы можете добавить элементы списка треков -->
+            <ComboBoxItem Content="Трек 1" />
+            <ComboBoxItem Content="Трек 2" />
+            <ComboBoxItem Content="Трек 3" />
+            <!-- Добавьте другие треки, какие вам нужны -->
+        </ComboBox>
+
+        <!-- Нижняя панель элементов -->
+        <StackPanel VerticalAlignment="Bottom" Background="LightGray" Orientation="Horizontal" HorizontalAlignment="Center">
+            <!-- Кнопка настроек -->
+            <Button Content="Настройки" Margin="5" />
+
+            <!-- Кнопка переключения треков -->
+
+            <!-- Кнопка паузы/воспроизведения -->
+            <Button Content="Пауза" Margin="5" />
+            <Button Content="Переключить" Height="24" Width="83" />
+
+            <!-- Дополнительные элементы управления -->
+            <!-- Здесь вы можете добавить другие элементы управления, такие как полосы прокрутки, громкость и т. д. -->
+        </StackPanel>
+    </Grid>
+</Window>
