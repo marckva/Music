@@ -22,4 +22,8 @@
     <Resource Include="Images\hajime2.jpg" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="GlobalClass\" />
+  </ItemGroup>
+
 </Project>

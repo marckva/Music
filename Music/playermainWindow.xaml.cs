@@ -22,7 +22,7 @@ namespace Music
         private MediaPlayer player = new MediaPlayer();
         private string filePath = "C:/Users/pcuser/Desktop/mus/Rollup.mp3";
 
-        private string backgroundImage = "";
+       // private string backgroundImage = "";
 
         public playermainWindow()
         {

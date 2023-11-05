@@ -5,35 +5,56 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Music"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="playermainWindow" Height="576" Width="888" MinHeight="540" MinWidth="750">
+
 
 
     <DockPanel LastChildFill="True">
-        <Border DockPanel.Dock="Bottom"  BorderBrush="Black" BorderThickness="2">
+        <Border DockPanel.Dock="Bottom" BorderBrush="Black" BorderThickness="2">
             <Grid Margin="0,0,0,0">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="261*"/>
-                    <ColumnDefinition Width="527*"/> 
+                    <ColumnDefinition Width="261*" />
+                    <ColumnDefinition Width="527*" />
                 </Grid.ColumnDefinitions>
                 <Button Content="play" HorizontalAlignment="Left" VerticalAlignment="Center" Width="58" Height="30" Margin="1,1,0,1" Click="BTN_Play" />
-                <Button Content="stop" HorizontalAlignment="Left" VerticalAlignment="Center" Width="58" Height="30" Margin="120,1,0,1" Click="BTN_Stop"/>
-                <Button Content="Cover" HorizontalAlignment="Left" VerticalAlignment="Center" Width="58" Height="30" Margin="180,1,0,1" Click="ChangeCover"/>
-                <Label Content="Fil:" HorizontalAlignment="Right" VerticalAlignment="Center" Width="120" Height="30" Margin="0,1,300,1" Grid.Column="1"/>
-                <TextBlock Name="StiViser" HorizontalAlignment="Right"  VerticalAlignment="Center" Width="298" Margin="0,8,1,8" TextWrapping="Wrap" Text="TextBlock" Grid.Column="1"/>
+                <Button Content="stop" HorizontalAlignment="Left" VerticalAlignment="Center" Width="58" Height="30" Margin="88,0,0,0" Click="BTN_Stop" />
+                <Button Content="Cover" HorizontalAlignment="Left" VerticalAlignment="Center" Width="58" Height="30" Margin="180,1,0,1" Click="ChangeCover" />
+                <Slider Grid.Column="1" HorizontalAlignment="Left" Margin="433,0,0,0" VerticalAlignment="Center" Width="120"/>
             </Grid>
         </Border>
-        <Image Name="SoundCover" Height="{Binding SystemParameters.PrimaryScreenHeight}"  Width="{Binding SystemParameters.PrimaryScreenWidth}" Stretch="Fill"  StretchDirection="Both" Source = "C:\Users\pcuser\Desktop\2137cf.png" >
-            <Image.Effect>
-                <BlurEffect Radius = "4" />
-            </Image.Effect >
-        </Image>
-        <StackPanel Background="White" Margin=" 10 10 10 10" Width="61">
 
+        <Grid>
+            <!-- Первый дочерний элемент - изображение -->
+            <Image Name="SoundCover" Stretch="Fill" StretchDirection="Both" Source="C:\Users\pcuser\Desktop\2137cf.png">
+                <Image.Effect>
+                    <BlurEffect Radius="4" />
+                </Image.Effect>
+            </Image>
+
+            <!-- Цвет #80000000 означает полупрозрачный черный 
+            <Rectangle Fill="#80000000" />-->
+
+            <!-- Второй дочерний элемент - контейнер с динамическим размером -->
+
+            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <Border Margin="50" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#80000000" CornerRadius="10" Padding="10" MaxHeight="300" MaxWidth="400" MinHeight="250" MinWidth="350">
+                    <Grid>
+                        <StackPanel>
+                            <!-- Здесь размещайте другие элементы, которые вам нужны внутри контейнера -->
+                            <TextBox Text="TextBox 1" />
+                            <TextBox Text="TextBox 2" />
+                        </StackPanel>
+                    </Grid>
+                </Border>
+                <!-- Слайдер размещен под контейнером в той же сетке -->
+                <Slider HorizontalAlignment="Center" VerticalAlignment="Top" Width="350" Height="28" Margin="0,444,0,0"/>
+                <!-- Счетчик времени под слайдером -->
+                <TextBlock Name="TimeCounter" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,472,0,0" Foreground="White" />
+            </Grid>
+        </Grid>
+
+        <StackPanel Background="White" Margin="10 10 10 10" Width="61">
         </StackPanel>
     </DockPanel>
+
 </Window>
-
-
-    
-
-    

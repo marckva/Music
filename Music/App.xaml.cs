@@ -17,11 +17,6 @@ namespace Music
         {
             base.OnStartup(e);
 
-            ResourceDictionary darkTheme = new ResourceDictionary { Source = new Uri("Resourses/DarkTheme.xaml", UriKind.Relative) };
-            ResourceDictionary lightTheme = new ResourceDictionary { Source = new Uri("Resourses/LightTheme.xaml", UriKind.Relative) };
-
-            Application.Current.Resources.MergedDictionaries.Add(darkTheme);
-            Application.Current.Resources.MergedDictionaries.Add(lightTheme);
 
      
         }
