@@ -1,13 +1,9 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
                    
-    <!-- Задайте цвет фона -->
     <SolidColorBrush x:Key="BackgroundColor" Color="#2C2C2C" />
 
-    <!-- Задайте цвет текста -->
     <SolidColorBrush x:Key="TextColor" Color="#FFFFFF" />
 
-    <!-- Задайте цвет акцента -->
     <SolidColorBrush x:Key="AccentColor" Color="#007ACC" />
 
-    <!-- И другие стили элементов по вашему выбору -->
 </ResourceDictionary>

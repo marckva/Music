@@ -24,7 +24,6 @@ namespace Music.GlobalClass
         {
             using (HttpClient client = new HttpClient())
             {
-                // Замените URL на URL вашего сервера MongoDB и ваш конкретный запрос
                 string apiUrl = "  url   ";
 
                 HttpResponseMessage response = await client.GetAsync(apiUrl);
@@ -32,7 +31,6 @@ namespace Music.GlobalClass
                 if (response.IsSuccessStatusCode)
                 {
                     string json = await response.Content.ReadAsStringAsync();
-                    // Обработка данных JSON, которые вы получили
                 }
                 else
                 {

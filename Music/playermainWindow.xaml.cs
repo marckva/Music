@@ -86,29 +86,22 @@ namespace Music
 
         private void PlayNextTrack()
         {
-            // Увеличьте индекс текущего трека
             currentTrackIndex++;
 
-            // Проверьте, не выходит ли индекс за пределы списка воспроизведения
             if (currentTrackIndex >= playlist.Count)
             {
-                currentTrackIndex = 0; // Если да, вернитесь к началу списка
+                currentTrackIndex = 0; 
             }
 
-            // Обновите путь к текущему треку
             filePath = playlist[currentTrackIndex];
 
-            // Закройте текущий трек и откройте новый
             player.Close();
             player.Open(new Uri(filePath));
 
-            // Воспроизведите новый трек
             player.Play();
 
-            // Обновите интерфейс, например, отобразите название текущего трека
             CurrentTrack.Text = System.IO.Path.GetFileNameWithoutExtension(filePath);
 
-            // Также, вы можете извлечь и установить обложку для нового трека
             ExtractAndSetCover(filePath);
         }
 
@@ -119,13 +112,12 @@ namespace Music
              "C:/Users/pcuser/Desktop/mus/Durak.mp3",
              "C:/Users/pcuser/Desktop/mus/Kino.mp3",
              "C:/Users/pcuser/Desktop/mus/Lumen.mp3",
-            // Добавьте другие треки в ваш плейлист
+            //  другие треки 
         };
 
         private void Timer_Tick(object sender, EventArgs e)
         {
 
-            //double delay = this.player.Position.TotalSeconds / totalTime.TotalSeconds * 100;
 
             if (this.player.NaturalDuration.HasTimeSpan)
             {
@@ -138,7 +130,6 @@ namespace Music
             else
             {
                 // Обработка ситуации, когда NaturalDuration имеет "Automatic"
-                // Например, можно обнулить значение слайдера
                 sliderDuration.Value = 0;
             }
         }
@@ -195,7 +186,7 @@ namespace Music
 
         private void ResetBackground()
         {
-            // Сброс фона на изображение по умолчанию или другое изображение, которое вы хотите использовать
+            // Сброс фона на изображение по умолчанию или другое изображение=
             Background = new ImageBrush(new BitmapImage(new Uri("C:/Users/pcuser/Desktop/2137cf.png")));
         }
 
@@ -259,35 +250,30 @@ namespace Music
 
         private void BTN_Previous(object sender, RoutedEventArgs e)
         {
-            // Уменьшите индекс текущего трека
+            
             currentTrackIndex--;
 
-            // Проверьте, не стал ли индекс отрицательным
+            // Проверка, не стал ли индекс отрицательным
             if (currentTrackIndex < 0)
             {
                 currentTrackIndex = playlist.Count - 1; // Если да, вернитесь к концу списка
             }
 
-            // Обновите путь к текущему треку
             filePath = playlist[currentTrackIndex];
 
-            // Закройте текущий трек и откройте новый
             player.Close();
             player.Open(new Uri(filePath));
 
-            // Воспроизведите новый трек
             player.Play();
 
-            // Обновите интерфейс, например, отобразите название текущего трека
             CurrentTrack.Text = System.IO.Path.GetFileNameWithoutExtension(filePath);
 
-            // Также, вы можете извлечь и установить обложку для нового трека
             ExtractAndSetCover(filePath);
         }
 
         private void PlayTrackByFilePath(string filepath)
         {
-            // Остановите текущий таймер
+            // остановка текущий таймер
             if (timer != null)
             {
                 timer.Stop();
@@ -299,20 +285,18 @@ namespace Music
             if (index != -1)
             {
                 // Найден трек в плейлисте
-                currentTrackIndex = (index + 1) % playlist.Count; // Установите индекс следующего трека
-                filePath = playlist[currentTrackIndex]; // Обновите путь к следующему треку
+                currentTrackIndex = (index + 1) % playlist.Count; //  индекс следующего трека
+                filePath = playlist[currentTrackIndex]; //  путь к следующему треку
 
                 player.Close();
                 player.Open(new Uri(filePath));
                 player.Play();
 
-                // Создайте новый таймер и начните его
                 timer = new System.Windows.Threading.DispatcherTimer();
                 timer.Interval = TimeSpan.FromSeconds(1);
                 timer.Tick += new EventHandler(Timer_Tick);
                 timer.Start();
 
-                // Обновите интерфейс и обложку, если необходимо
                 CurrentTrack.Text = System.IO.Path.GetFileNameWithoutExtension(filePath);
                 ExtractAndSetCover(filePath);
             }
@@ -327,17 +311,14 @@ namespace Music
 
         private void PlayCurrentTrack()
         {
-            // Закройте текущий трек и откройте его заново
             player.Close();
             player.Open(new Uri(filePath));
 
             // Воспроизведите текущий трек
             player.Play();
 
-            // Обновите интерфейс, например, отобразите название текущего трека
             CurrentTrack.Text = System.IO.Path.GetFileNameWithoutExtension(filePath);
 
-            // Также, вы можете извлечь и установить обложку для текущего трека
             ExtractAndSetCover(filePath);
         }
 

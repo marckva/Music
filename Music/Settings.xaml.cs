@@ -36,7 +36,6 @@ namespace Music
 
         }
 
-        //НУ ТУТ ТОЖЕ САМ Я ХУЙ ЕГО ВООБЩЕ  ЗНАЕТ ПОЧЕМУ ТЕМЯ НЕ МЕНЯЕТСЯ ТУТ ВРОДЕ БЫ ВСЕ НОРМ ЕСЛИ ЧТО ЧЕКНИ АППХАМИЛКС ТАМ КОЛЕКЦИЯ С ЕБАНЫМИ ТЕМАМИ !!!!!!!!!!!!!!!!!!!!
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
 

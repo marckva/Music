@@ -29,7 +29,7 @@ namespace Music
             registrationWindow.Show(); // Открываем окно регистрации
             this.Close(); // Закрываем текущее окно авторизации, если нужно
 
-            // Здесь вы можете добавить логику проверки имени пользователя и пароля
+
         }
         private void RegistrationButton_Click(object sender, RoutedEventArgs e)
         {

@@ -47,8 +47,8 @@
                     <Grid>
                         <StackPanel>
                             <!-- Здесь размещайте другие элементы, которые вам нужны внутри контейнера -->
-                            <TextBox Text="TextBox 1" />
-                            <TextBox Text="TextBox 2" />
+                            <TextBox Text="" />
+                            <TextBox Text="" />
                         </StackPanel>
                     </Grid>
                 </Border>
