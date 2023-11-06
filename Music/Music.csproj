@@ -15,15 +15,14 @@
   <ItemGroup>
     <PackageReference Include="MaterialDesignColors" Version="2.1.4" />
     <PackageReference Include="MaterialDesignThemes" Version="4.9.0" />
+    <PackageReference Include="MongoDB.Driver" Version="2.22.0" />
+    <PackageReference Include="NAudio" Version="2.2.1" />
+    <PackageReference Include="TagLibSharp" Version="2.3.0" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Images\hajime1.jpg" />
     <Resource Include="Images\hajime2.jpg" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="GlobalClass\" />
   </ItemGroup>
 
 </Project>

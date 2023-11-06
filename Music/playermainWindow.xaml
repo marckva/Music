@@ -17,9 +17,15 @@
                     <ColumnDefinition Width="527*" />
                 </Grid.ColumnDefinitions>
                 <Button Content="play" HorizontalAlignment="Left" VerticalAlignment="Center" Width="58" Height="30" Margin="1,1,0,1" Click="BTN_Play" />
-                <Button Content="stop" HorizontalAlignment="Left" VerticalAlignment="Center" Width="58" Height="30" Margin="88,0,0,0" Click="BTN_Stop" />
-                <Button Content="Cover" HorizontalAlignment="Left" VerticalAlignment="Center" Width="58" Height="30" Margin="180,1,0,1" Click="ChangeCover" />
-                <Slider Grid.Column="1" HorizontalAlignment="Left" Margin="433,0,0,0" VerticalAlignment="Center" Width="120"/>
+                <Button Content="Previous" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="75" Height="30" Click="BTN_Previous" Margin="138,0,0,1" />
+                <Button Content="Next" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="75" Height="30" Click="BTN_Next" Grid.ColumnSpan="2" Margin="218,0,0,1" />
+
+                <CheckBox Name ="CheckRepeat" Content="Repeat?" Grid.Column="1" HorizontalAlignment="Left" Margin="506,0,0,0" VerticalAlignment="Center" 
+                          Unchecked="CheckRepeat_Unchecked"    Checked="CheckRepeat_Checked"/>
+                <Slider HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Vertical" Value="0.5"
+                        Width="58" Height="30" Grid.Column="1" Margin="392,0,0,2" Minimum="0" Maximum="1" 
+                        Name="sliderVolume" ValueChanged="sliderVolume_ValueChanged" />
+
             </Grid>
         </Border>
 
@@ -27,7 +33,7 @@
             <!-- Первый дочерний элемент - изображение -->
             <Image Name="SoundCover" Stretch="Fill" StretchDirection="Both" Source="C:\Users\pcuser\Desktop\2137cf.png">
                 <Image.Effect>
-                    <BlurEffect Radius="4" />
+                    <BlurEffect Radius="15" />
                 </Image.Effect>
             </Image>
 
@@ -47,9 +53,11 @@
                     </Grid>
                 </Border>
                 <!-- Слайдер размещен под контейнером в той же сетке -->
-                <Slider HorizontalAlignment="Center" VerticalAlignment="Top" Width="350" Height="28" Margin="0,444,0,0"/>
+                <Slider HorizontalAlignment="Left" VerticalAlignment="Center"
+                        Width="391" Height="30" Margin="245,340,0,2" Minimum="0" 
+                        Name="sliderDuration" Grid.ColumnSpan="2"  />
                 <!-- Счетчик времени под слайдером -->
-                <TextBlock Name="TimeCounter" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,472,0,0" Foreground="White" />
+                <TextBlock Name="TimeCounter" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,765,0,0" Foreground="White" />
             </Grid>
         </Grid>
 
